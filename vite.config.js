@@ -8,7 +8,8 @@ export default defineConfig({
     // port: 3000,  // to change the port from default
     proxy: {
       "/api": {
-        target: "http://localhost:5000/",
+        // target: "http://localhost:5000/",
+        target: "https://passwordmanager-backend.onrender.com/",
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ""),
       },
