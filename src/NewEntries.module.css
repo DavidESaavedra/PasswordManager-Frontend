@@ -1,0 +1,39 @@
+.entry_h2 {
+  text-align: center;
+  padding-top: 1.5rem;
+}
+
+.edit {
+  padding: 2rem;
+}
+
+.edit_fieldset {
+  border: none;
+}
+
+.edit_p {
+  margin: 1rem 0;
+}
+
+.edit_label {
+  display: block;
+  font-weight: bold;
+}
+
+.edit_input {
+  border-radius: 15px;
+  border-width: 2px;
+  width: 100%;
+}
+
+.edit_buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.edit_button {
+  padding: 0.2em;
+  border-radius: 15px;
+  font-weight: bold;
+}

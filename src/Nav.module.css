@@ -1,0 +1,60 @@
+/* header */
+.header {
+  background-color: hotpink;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+  padding: 0.2em 1em;
+  position: sticky;
+  top: 0px;
+
+  font-size: 2.5rem;
+}
+
+.rightNav a {
+  text-decoration: none;
+  color: black;
+  padding-right: 2rem;
+
+  cursor: pointer;
+}
+
+.rightNav a:hover {
+  color: pink;
+}
+
+/* popup */
+.popup {
+  position: absolute;
+  background-color: hotpink;
+  padding: 2rem;
+  right: 3rem;
+  top: 5rem;
+  border-radius: 10px;
+}
+
+.popup_fieldset {
+  border: none;
+}
+
+.popup_p {
+  margin: 1rem 0;
+}
+
+.popup_label {
+  display: block;
+  font-weight: bold;
+}
+
+.popup_input {
+  border-radius: 15px;
+  border-width: 2px;
+  width: 100%;
+}
+
+.popup_button {
+  padding: 0.2em;
+  border-radius: 15px;
+  font-weight: bold;
+}
