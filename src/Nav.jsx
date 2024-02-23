@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./Nav.module.css";
-import axios from "axios";
+import axios from "./axios/axios";
 import { useSelector, useDispatch } from "react-redux";
 import { setCredentials } from "./features/auth/authSlice";
 
@@ -53,7 +53,7 @@ const Nav = () => {
     e.preventDefault();
 
     axios
-      .post("/api/login", {
+      .post("/login", {
         email: logUser.email.trim(),
         pwd: logUser.password.trim(),
       })
@@ -70,7 +70,7 @@ const Nav = () => {
     e.preventDefault();
 
     axios
-      .post("/api/register", {
+      .post("/register", {
         email: regUser.email,
         pwd: regUser.password,
       })
@@ -78,7 +78,7 @@ const Nav = () => {
         setDisplayReg(false);
 
         axios
-          .post("/api/login", {
+          .post("/login", {
             email: regUser.email.trim(),
             pwd: regUser.password.trim(),
           })
@@ -96,7 +96,7 @@ const Nav = () => {
 
   const logout = () => {
     axios
-      .get("/api/logout", { withCredentials: true })
+      .get("/logout", { withCredentials: true })
       .then((response) => {
         window.location.reload();
       })

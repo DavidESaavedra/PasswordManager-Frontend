@@ -14,7 +14,7 @@ const NewEntries = (props) => {
     e.preventDefault();
 
     axiosInstance
-      .post("/api/passwords/add", {
+      .post("/passwords/add", {
         title,
         username,
         password,

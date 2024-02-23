@@ -48,10 +48,14 @@ const Body = () => {
 
   useEffect(() => {
     axiosInstance
-      .post("/api/passwords/entries", {
-        ID: auth.ID,
-        accessToken: auth.accessToken,
-      })
+      .post(
+        "/passwords/entries",
+        {
+          ID: auth.ID,
+          accessToken: auth.accessToken,
+        },
+        { withCredentials: true }
+      )
       .then(function (response) {
         // have to have this couldn't fix it in backend
         if (response !== undefined) {

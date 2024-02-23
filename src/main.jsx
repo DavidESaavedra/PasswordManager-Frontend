@@ -6,9 +6,9 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { store } from "./app/store";
 import { Provider } from "react-redux";
-import axios from "axios";
+import axios from "./axios/axios";
 import { setCredentials, selectCurrentToken } from "./features/auth/authSlice";
-import axiosInstance from "./axios/axiosInstance.js";
+import axiosInstance from "./axios/axiosInstance";
 // import { jwt_decode } from "jwt-decode";
 
 // axios interceptors for 403 response from server for new access token
@@ -25,7 +25,7 @@ axiosInstance.interceptors.request.use(async (req) => {
   // }
 
   await axios
-    .get("/api/refresh", { withCredentials: true })
+    .get("/refresh", { withCredentials: true })
     .then((res) => {
       dispatch(
         setCredentials({ ID: res.data.ID, accessToken: res.data.accessToken })

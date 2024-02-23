@@ -36,7 +36,7 @@ const Entries = (props) => {
     e.preventDefault();
 
     axiosInstance
-      .put("/api/passwords/edit", {
+      .put("/passwords/edit", {
         ID: userID,
         pKey: pKey,
         title: newTitle,
@@ -64,7 +64,7 @@ const Entries = (props) => {
 
   const deleteEntry = () => {
     axiosInstance
-      .delete(`/api/passwords/delete/${pKey}`, {
+      .delete(`/passwords/delete/${pKey}`, {
         data: {
           ID: auth.ID,
           pKey,
