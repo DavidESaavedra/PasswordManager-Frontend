@@ -9,18 +9,26 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem 2rem 0 2rem;
+  padding: 2rem 2rem 2rem 2rem;
 }
 
 .box_left {
+  min-width: 15rem;
+  word-wrap: break-word;
+}
+
+.box_right {
   display: flex;
   margin-left: 2em;
   gap: 10px;
 }
 
 .box img {
+  min-width: 1rem;
   background-color: hotpink;
-  height: 2.5rem;
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
 }
 
 /* edit */

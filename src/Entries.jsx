@@ -83,17 +83,17 @@ const Entries = (props) => {
   return (
     <div className={styles.border}>
       <div className={styles.box}>
-        <div className={styles.box_right}>
+        <div className={styles.box_left}>
           <a>{title}</a>
         </div>
 
-        <div className={styles.box_left}>
+        <div className={styles.box_right}>
           <a
             className={styles.tools}
             title="Edit Credentials"
             onClick={() => model(0)}
           >
-            <img src="wrench.1024x1024.png" alt="" />
+            <img src="edit.png" alt="" />
           </a>
           <a
             className={styles.tools}
@@ -113,7 +113,7 @@ const Entries = (props) => {
               });
             }}
           >
-            <img src="person.797x1024.png" alt="" />
+            <img src="user.png" alt="" />
           </a>
           <a
             className={styles.tools}
@@ -133,14 +133,14 @@ const Entries = (props) => {
               });
             }}
           >
-            <img src="vpn-key.1024x558.png" alt="" />
+            <img src="password.png" alt="" />
           </a>
           <a
             className={styles.tools}
             title="Delete Credentials"
             onClick={() => model(1)}
           >
-            <img src="alternate-trash.896x1024.png" alt="" />
+            <img src="delete.png" alt="" />
           </a>
         </div>
       </div>
