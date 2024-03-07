@@ -9,18 +9,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem 2rem 2rem 2rem;
 }
 
 .box_left {
   min-width: 15rem;
   word-wrap: break-word;
+  padding: 2rem;
+  /* border: purple solid 2px; */
 }
 
 .box_right {
   display: flex;
-  margin-left: 2em;
+  padding: 2.5rem;
   gap: 10px;
+  /* border: green solid 2px; */
 }
 
 .box img {
