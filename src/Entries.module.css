@@ -20,17 +20,24 @@
 
 .box_right {
   display: flex;
-  padding: 2.5rem;
+  padding: 2rem;
   gap: 10px;
   /* border: green solid 2px; */
 }
 
+.box a {
+  /* border: gold solid 2px; */
+  background-color: hotpink;
+  border-radius: 5px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
 .box img {
   min-width: 1rem;
-  background-color: hotpink;
   width: 100%;
   height: auto;
-  border-radius: 5px;
 }
 
 /* edit */

@@ -84,7 +84,7 @@ const Entries = (props) => {
     <div className={styles.border}>
       <div className={styles.box}>
         <div className={styles.box_left}>
-          <a>{title}</a>
+          <p>{title}</p>
         </div>
 
         <div className={styles.box_right}>
