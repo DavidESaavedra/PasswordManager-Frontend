@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "./Nav.module.css";
 import axios from "./axios/axios";
 import { useSelector, useDispatch } from "react-redux";
+import { toast } from "react-toastify";
 import { setCredentials } from "./features/auth/authSlice";
 
 localStorage.getItem("data-theme");
@@ -51,6 +52,16 @@ const Nav = () => {
 
   const Login = (e) => {
     e.preventDefault();
+    toast("Welcome, wait one moment for login", {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: false,
+      progress: undefined,
+      theme: "dark",
+    });
 
     axios
       .post("/login", {
@@ -63,11 +74,32 @@ const Nav = () => {
       })
       .catch(function (error) {
         console.log(error.response);
+        toast.dismiss();
+        toast("Wrong email or password", {
+          position: "top-center",
+          autoClose: 10000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: false,
+          progress: undefined,
+          theme: "dark",
+        });
       });
   };
 
   const Register = (e) => {
     e.preventDefault();
+    toast("Thank you for registering, wait one moment for login", {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: false,
+      progress: undefined,
+      theme: "dark",
+    });
 
     axios
       .post("/register", {
@@ -91,6 +123,17 @@ const Nav = () => {
       })
       .catch(function (error) {
         console.log(error);
+        toast.dismiss();
+        toast("User already exists", {
+          position: "top-center",
+          autoClose: 10000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: false,
+          progress: undefined,
+          theme: "dark",
+        });
       });
   };
 

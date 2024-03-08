@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "./NewEntries.module.css";
 import { useSelector } from "react-redux";
 import axiosInstance from "./axios/axiosInstance";
+import { toast } from "react-toastify";
 
 const NewEntries = (props) => {
   const [title, setTitle] = useState("");
@@ -22,7 +23,18 @@ const NewEntries = (props) => {
         accessToken: auth.accessToken,
       })
       .then(function (response) {
-        props.onSubmit({ title, username, password });
+        console.log(response);
+        props.onSubmit({ pKey: response.data.pKey, title, username, password });
+        toast("New Credential was added", {
+          position: "top-center",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: false,
+          progress: undefined,
+          theme: "dark",
+        });
       })
       .catch(function (error) {
         console.log(error);

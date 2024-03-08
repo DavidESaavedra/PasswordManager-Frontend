@@ -6,7 +6,7 @@ import axiosInstance from "./axios/axiosInstance";
 
 const Entries = (props) => {
   const auth = useSelector((state) => state.auth);
-  const { userID, pKey, title, username, password } = props;
+  const { pKey, title, username, password } = props;
   const [popupDelete, setPopupDelete] = useState(false);
   const [edit, setEdit] = useState(false);
 
@@ -37,7 +37,7 @@ const Entries = (props) => {
 
     axiosInstance
       .put("/passwords/edit", {
-        ID: userID,
+        ID: auth.ID,
         pKey: pKey,
         title: newTitle,
         username: newUsername,
@@ -48,13 +48,22 @@ const Entries = (props) => {
         console.log(res);
 
         props.editEntry({
-          ID: userID,
           pKey,
           title: newTitle,
           username: newUsername,
           password: newPassword,
         });
 
+        toast("Credential Edited", {
+          position: "top-center",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: false,
+          progress: undefined,
+          theme: "dark",
+        });
         setEdit(false);
       })
       .catch((error) => {
@@ -74,6 +83,16 @@ const Entries = (props) => {
       .then((res) => {
         console.log(res);
         props.eraseEntry(pKey);
+        toast("Credential Deleted", {
+          position: "top-center",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: false,
+          progress: undefined,
+          theme: "dark",
+        });
       })
       .catch((err) => {
         console.log(err);
@@ -208,17 +227,6 @@ const Entries = (props) => {
           <p>Delete Credentials?</p>
           <a
             onClick={() => {
-              toast("Credentials Deleted", {
-                position: "top-center",
-                autoClose: 2000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: false,
-                progress: undefined,
-                theme: "dark",
-              });
-
               deleteEntry();
 
               setPopupDelete(!popupDelete);
