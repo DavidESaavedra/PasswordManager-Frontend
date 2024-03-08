@@ -34,9 +34,7 @@
 }
 
 .box img {
-  min-width: 1rem;
-  width: 100%;
-  height: auto;
+  min-width: 3rem;
 }
 
 /* edit */
